@@ -20,6 +20,7 @@
 	<!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="76x76" href="{{asset('admin/assets/img/apple-icon.png')}}">
 	<link rel="icon" type="image/png" sizes="96x96" href="{{asset('admin/assets/img/favicon.png')}}">
+    @yield('header')
 </head>
 
 <body>
@@ -29,7 +30,7 @@
 		@include('layouts.includes._navbar')
 		<!-- END NAVBAR -->
 		<!-- LEFT SIDEBAR -->
-		=@include('layouts.includes._sidebar')
+		@include('layouts.includes._sidebar')
 		<!-- END LEFT SIDEBAR -->
 		<!-- MAIN -->
 		@yield('content')
@@ -48,6 +49,7 @@
 	<script src="{{asset('admin/assets/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
 	<script src="{{asset('admin/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
 	<script src="{{asset('admin/assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js')}}"></script>
+	@yield('footer')
 	
 	
 </body>

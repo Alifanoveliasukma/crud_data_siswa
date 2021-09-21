@@ -9,7 +9,7 @@ class Siswa extends Model
 {
     use HasFactory;
     protected $table = 'siswa';
-    protected $fillable = ['nama_depan', 'nama_belakang', 'jenis_kelamin', 'agama', 'alamat', 'avatar'];
+    protected $fillable = [ 'user_id','nama_depan', 'nama_belakang', 'jenis_kelamin', 'agama', 'alamat', 'avatar'];
 
     public function getAvatar()
     {
@@ -17,5 +17,9 @@ class Siswa extends Model
             return asset('images/df.png');
         }
         return asset('images/' . $this->avatar);
+    }
+    public function mapel()
+    {
+        return $this->belongsTomany(Mapel::class)->withPivot(['nilai'])->withTimestamps();
     }
 }
